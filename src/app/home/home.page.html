@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      SCA
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,12 +9,16 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-title size="large">SUNNY COAST APARTMENTS</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <ion-buttons>
+
+    <ion-button slot="start" [routerLink]="['/customers']">CLIENTES</ion-button>    
+    <ion-button slot="primary" [routerLink]="['/tasks']">TASKS</ion-button>
+    <ion-button slot="secondary" [routerLink]="['/houses']">APARTAMENTOS</ion-button>
+    <ion-button slot="end" [routerLink]="['/bookings']">RESERVAS</ion-button>
+
+  </ion-buttons>
 </ion-content>
