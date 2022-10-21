@@ -1,9 +1,18 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>tasks</ion-title>
+    <ion-title>TAREAS</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  
+  <ion-list>
+    <ion-item>
+      <ion-button (click)="onNewTask()" style="margin:10px;width:50px;height:50px;--border-radius:50%" slot="start" icon-only><ion-icon style="zoom:2" name="add-outline"></ion-icon></ion-button>
+    </ion-item>
 
+
+    <app-task *ngFor="let task of getTasks()" [task]="task" (onEdit)="onEditTask($event)" 
+    (onDelete)="onDeleteTask($event)"></app-task>
+  </ion-list>
 </ion-content>

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Customer } from '../modal/customer';
+import { Customer } from '../models/customer';
 @Injectable({
   providedIn: 'root'
 })
@@ -110,9 +110,10 @@ export class CustomersService {
 
 
   idCustomer: number = this._customers.length+1;
-  constructor() { }
+  constructor() { 
+  }
 
-  getCustomer(){
+  getCustomers(){
     return this._customers;
   }
 
@@ -129,7 +130,7 @@ export class CustomersService {
     this._customers.push(customer);
   }
 
-  updatePerson(customer: Customer){
+  updateCustomer(customer: Customer){
     var _customer = this._customers.find(c => c.idCustomer == customer.idCustomer);
     if(_customer){
       _customer.nameCustomer = customer.nameCustomer;

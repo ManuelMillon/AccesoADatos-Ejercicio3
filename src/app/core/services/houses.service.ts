@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { House } from '../modal/house';
+import { House } from '../models/house';
 
 @Injectable({
   providedIn: 'root'

@@ -2,9 +2,10 @@
 import { ModalController } from '@ionic/angular';
 
 //IMPORTACIÓN DEL CUSTOMER SERVICE
-import { CustomersService } from './../../services/customers.service';
+import { CustomersService } from '../../core/services/customers.service';
 import { Component, OnInit } from '@angular/core';
-import { Customer } from 'src/app/modal/customer';
+import { Customer } from 'src/app/core/models/customer';
+import { CustomerDetailComponent } from 'src/app/core/components/customer-detail/customer-detail.component';
 
 
 
@@ -20,19 +21,14 @@ export class CustomersPage implements OnInit {
 
   customer: Customer;
 
-  //sALE POR LA AUTOCORRECCIÓN, NO PORQUE QUIERA
   alert: any;
   
   constructor(
     private modal:ModalController,
 
-    //AÑADIMOS EL CUSTOMER SERVICE PARA QUE EL MÉTODO FUNCIONE
+
     private customerSvc: CustomersService,
     
-    //EL CONSTRUCTOR NO PILLA EL CUSTOMER DETAIL COMPONENT A PESAR DE RECICBIR LA IMPORTACIÓN
-  //  private customerDetail: CustomerDetailComponent
-
-
   ) { }
 
 
@@ -40,7 +36,7 @@ export class CustomersPage implements OnInit {
     const modal = await this.modal.create({
      component:CustomerDetailComponent,
       componentProps:{
-        person:customer
+        customer:customer
       }
     });
     modal.present();
@@ -51,7 +47,7 @@ export class CustomersPage implements OnInit {
             this.customerSvc.addCustomer(result.data.customer);
             break;
           case 'Edit':
-  //         this.customerSvc.updateCustomer(result.data.customer);
+            this.customerSvc.updateCustomer(result.data.customer);
             break;
           default:
         }
@@ -59,52 +55,22 @@ export class CustomersPage implements OnInit {
     });
   }
 
-
-
-
-  async presentCustomerForm(customer:Customer){
-    const modal = this.modal.create({
-      component: CustomerDetailComponent,
-      componentProps:{
-        customer:customer
-      }
-    });
-
-    
-    //NO PILLA THEN. ¿pOR QUÉ?
-    //El sistema se inventa aquí un await.
-
-
-    modal.present();
-    modal.onDidDismiss().then=>{
-      if(result && result.data){
-        switch(result.data.mode){
-          case 'New':
-            this.customerSvc.addCustomer(result.data.customer);
-            break;
-          case 'Edit':
-            this.customerSvc.updatePerson(result.data.customer);
-            break;
-            default:
-        }
-      }
-    }
-
-  }
-
-
-
-
-
-
-
   ngOnInit() {
   }
 
   //VAYA. RESULTA QUE SÍ ESTÁ EL MÉTODO GET CUSTOMER QUE NO PILLA EL HTML.
-  getCustomer = this.customerSvc.getCustomer;
-  onEditCustomer = this.customerSvc.updatePerson;
-  onDeleteCustomer = this.customerSvc.deleteCustomerById;
+  getCustomers(){
+    return this.customerSvc.getCustomers();
+  }
+  onEditCustomer(customer){
+    this.presentCustomerForm(customer)
+  }
+
+  
+  onDeleteCustomer(customer){
+    this.customerSvc.deleteCustomerById(customer.idCustomer);
+
+  }
   onNewCustomer(){
     this.presentCustomerForm(null);
   }

@@ -7,11 +7,11 @@ import { ModalController } from '@ionic/angular';
 
 
 @Component({
-  selector: 'app-personal',
-  templateUrl: './personal.page.html',
-  styleUrls: ['./personal.page.scss'],
+  selector: 'app-customer-detail',
+  templateUrl: './customer-detail.component.html',
+  styleUrls: ['./customer-detail.component.scss'],
 })
-export class PersonalPage implements OnInit {
+export class CustomerDetailComponent implements OnInit {
 form: FormGroup;
 mode: "New" | "Edit" = "New";
 @Input('customer') set customer(customer: Customer){
@@ -22,6 +22,7 @@ if(customer){
   this.form.controls.emailCustomer.setValue(customer.emailCustomer);
   this.form.controls.telephoneCustomer.setValue(customer.telephoneCustomer);
   this.form.controls.pictureCustomer.setValue(customer.pictureCustomer);
+  this.form.controls.nationalityCustomer.setValue(customer.nationalityCustomer);
   this.mode = "Edit";
 }
 }

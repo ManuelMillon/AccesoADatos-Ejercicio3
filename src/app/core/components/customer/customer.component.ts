@@ -1,5 +1,6 @@
-import { Component, EventEmitter, OnInit } from '@angular/core';
-import { Customer } from 'src/app/modal/customer';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Customer } from 'src/app/core/models/customer';
+import { CustomersService } from 'src/app/core/services/customers.service';
 
 @Component({
   selector: 'app-customer',
@@ -13,7 +14,7 @@ export class CustomerComponent implements OnInit {
   @Output() onDelete = new EventEmitter;
   @Input() customer:Customer;
 
-  constructor(private customerSvc:CustomerService) { }
+  constructor(private customerSvc: CustomersService) { }
 
   ngOnInit() {}
 

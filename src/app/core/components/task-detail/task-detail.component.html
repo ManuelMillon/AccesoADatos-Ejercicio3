@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Datos de la tarea</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="onDismiss(null)">Cerrar</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" (keyup.enter)="onSubmit()">
+    <ion-item>
+      <ion-label position="floating">
+        Nombre de la tarea
+      </ion-label>
+      <ion-input type="text" placeholder="Introduce el nombre de la tarea" formControlName="nameTask"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">
+        Fecha de la tarea
+      </ion-label>
+      <ion-input type="text" placeholder="Introduce la fecha" formControlName="dateTask"></ion-input>
+    </ion-item>
+    <ion-button [disabled]="!form.valid" type="submit">{{mode=="Edit"?"Modificar":"Añadir"}}</ion-button>
+</form>
+</ion-content>
