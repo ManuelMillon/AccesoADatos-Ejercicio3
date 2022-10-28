@@ -1,0 +1,48 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-title>Datos de la persona</ion-title>
+      <ion-buttons slot="end">
+        <ion-button (click)="onDismiss(null)">Cerrar</ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">
+  
+    
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" (keyup.enter)="onSubmit()">
+      <ion-item>
+        <ion-label position="floating">
+          Nombre
+        </ion-label>
+        <ion-input type="text" placeholder="Introduce el nombre" formControlName="nameCustomer"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">
+          Apellidos
+        </ion-label>
+        <ion-input type="text" placeholder="Introduce tus apellidos" formControlName="surnameCustomer"></ion-input>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label position="floating">
+          Tarea
+        </ion-label>
+        <ion-input type="text" placeholder="Introduce la tarea" formControlName="nameTask"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">
+          Creación de tarea
+        </ion-label>
+        <ion-input type="text" placeholder="Fecha de creación de la tarea" formControlName="createTask"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">
+          Realización de la tarea
+        </ion-label>
+        <ion-input type="text" placeholder="Realizacicón de la terea" formControlName="doTask"></ion-input>
+      </ion-item>
+
+  
+      <ion-button [disabled]="!form.valid" type="submit">{{mode=="Edit"?"Modificar":"Añadir"}}</ion-button>
+    </form>
+  </ion-content>

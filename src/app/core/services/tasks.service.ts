@@ -10,31 +10,26 @@ export class TasksService {
     {
     idTask: 1,
     nameTask: "cocinar",
-    dateTask: "01-01-2022",
     imgTask: ""
     },
     {
     idTask: 2,
     nameTask: "limpiar",
-    dateTask: "01-01-2022",
     imgTask: ""
     },
   {
     idTask: 3,
     nameTask: "ordenar",
-    dateTask: "01-01-2022",
     imgTask: ""
     },
     {
     idTask: 4,
     nameTask: "merendar",
-    dateTask: "01-01-2022",
     imgTask: ""
     },
     {
     idTask: 5,
     nameTask: "enseñar",
-    dateTask: "01-01-2022",
     imgTask: ""
     },
   ]
@@ -66,7 +61,6 @@ export class TasksService {
     var _Task = this._tasks.find(c => c.idTask == Task.idTask);
     if(_Task){
       _Task.nameTask = Task.nameTask;
-      _Task.dateTask = Task.dateTask;
       _Task.imgTask = Task.imgTask;
     }
   }

@@ -15,7 +15,6 @@ export class TaskDetailComponent implements OnInit {
   @Input('task') set task(task: Task){
     if(task){
       this.form.controls.idTask.setValue(task.idTask);
-      this.form.controls.dateTask.setValue(task.dateTask);
       this.form.controls.nameTask.setValue(task.nameTask);
       this.mode = "Edit";
     }
@@ -29,7 +28,6 @@ export class TaskDetailComponent implements OnInit {
     this.form = this.fb.group({
       idTask:[null],
       nameTask:['', [Validators.required]],
-      dateTask:['', [Validators.required]],
       imgTask:[null]
   }
   )

@@ -1,18 +1,22 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>CLIENTES</ion-title>
+    <ion-title slot="end">CLIENTES</ion-title>
+
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   
   <ion-list>
-    <ion-item>
-      <ion-button (click)="onNewCustomer()" style="margin:10px;width:50px;height:50px;--border-radius:50%" slot="start" icon-only><ion-icon style="zoom:2" name="add-outline"></ion-icon></ion-button>
-    </ion-item>
-
-
     <app-customer *ngFor="let customer of getCustomers()" [customer]="customer" (onEdit)="onEditCustomer($event)" 
     (onDelete)="onDeleteCustomer($event)"></app-customer>
+
+    <ion-item>
+      <ion-button slot="start" (click)="onNewCustomer()" style="margin:10px;width:50px;height:50px;--border-radius:50%" icon-only><ion-icon style="zoom:2" name="add-outline"></ion-icon></ion-button>
+    </ion-item>
+
   </ion-list>
 </ion-content>

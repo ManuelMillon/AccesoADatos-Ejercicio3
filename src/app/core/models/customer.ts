@@ -5,6 +5,7 @@ export interface Customer {
     nationalityCustomer: string,
     pictureCustomer?: string,
     emailCustomer: string,
-    telephoneCustomer: string
+    telephoneCustomer: string,
+
 }
 

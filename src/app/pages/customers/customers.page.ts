@@ -1,11 +1,10 @@
-//import { CustomerDetailComponent } from './../../core/components/customer-detail/customer-detail.component';
+import { CustomerDetailComponent } from './../../core';
 import { ModalController } from '@ionic/angular';
 
 //IMPORTACIÓN DEL CUSTOMER SERVICE
 import { CustomersService } from '../../core/services/customers.service';
 import { Component, OnInit } from '@angular/core';
 import { Customer } from 'src/app/core/models/customer';
-import { CustomerDetailComponent } from 'src/app/core/components/customer-detail/customer-detail.component';
 
 
 
@@ -25,10 +24,7 @@ export class CustomersPage implements OnInit {
   
   constructor(
     private modal:ModalController,
-
-
     private customerSvc: CustomersService,
-    
   ) { }
 
 
@@ -58,7 +54,7 @@ export class CustomersPage implements OnInit {
   ngOnInit() {
   }
 
-  //VAYA. RESULTA QUE SÍ ESTÁ EL MÉTODO GET CUSTOMER QUE NO PILLA EL HTML.
+  
   getCustomers(){
     return this.customerSvc.getCustomers();
   }

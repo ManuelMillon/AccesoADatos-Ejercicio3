@@ -1,4 +1,4 @@
-import { CustomerComponent } from '../core/components/customer/customer.component';
+import { CustomerComponent } from 'src/app/core';
 import { Component } from '@angular/core';
 
 

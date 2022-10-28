@@ -15,12 +15,9 @@
       </ion-label>
       <ion-input type="text" placeholder="Introduce el nombre de la tarea" formControlName="nameTask"></ion-input>
     </ion-item>
-    <ion-item>
-      <ion-label position="floating">
-        Fecha de la tarea
-      </ion-label>
-      <ion-input type="text" placeholder="Introduce la fecha" formControlName="dateTask"></ion-input>
-    </ion-item>
+
+
+
     <ion-button [disabled]="!form.valid" type="submit">{{mode=="Edit"?"Modificar":"Añadir"}}</ion-button>
 </form>
 </ion-content>
