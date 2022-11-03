@@ -7,12 +7,11 @@ import { IonicModule } from '@ionic/angular';
 import { AssignmentsPageRoutingModule } from './assignments-routing.module';
 
 import { AssignmentsPage } from './assignments.page';
+import { CoreModule } from 'src/app/core/core.module';
 
 @NgModule({
   imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
+    CoreModule,
     AssignmentsPageRoutingModule
   ],
   declarations: [AssignmentsPage]

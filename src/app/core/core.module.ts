@@ -7,12 +7,17 @@ import { CustomerDetailComponent } from './components/customer-detail/customer-d
 import { TaskComponent } from './components/task/task.component';
 import { TaskDetailComponent } from './components/task-detail/task-detail.component';
 import { AssignmentComponent, AssignmentDetailComponent } from './components';
-import { PersonSelectableComponent } from './components/person-selectable/person-selectable.component';
+import { CustomerSelectableComponent } from './components/person-selectable/person-selectable.component';
+import { CustomersComponent } from './components/customers/customers.component';
+import { TasksComponent } from './components/tasks/tasks.component';
 
 
 
 @NgModule({
-  declarations: [CustomerComponent, CustomerDetailComponent, PersonSelectableComponent, TaskComponent, TaskDetailComponent, AssignmentComponent, AssignmentDetailComponent],
+  declarations: [CustomerComponent, CustomerDetailComponent, CustomerSelectableComponent, 
+    CustomersComponent,
+    TaskComponent, TaskDetailComponent, TasksComponent,
+    AssignmentComponent, AssignmentDetailComponent],
   imports: [
     CommonModule,
     FormsModule,
@@ -20,8 +25,8 @@ import { PersonSelectableComponent } from './components/person-selectable/person
     ReactiveFormsModule,
     
   ],
-  exports:[CommonModule, FormsModule, IonicModule, ReactiveFormsModule, CustomerComponent, CustomerDetailComponent,
-  TaskComponent, TaskDetailComponent, AssignmentComponent, AssignmentDetailComponent, PersonSelectableComponent]
+  exports:[CommonModule, FormsModule, IonicModule, ReactiveFormsModule, CustomerComponent, CustomerDetailComponent, CustomersComponent,
+  TaskComponent, TaskDetailComponent, TasksComponent, AssignmentComponent, AssignmentDetailComponent, CustomerSelectableComponent]
   }
 )
 

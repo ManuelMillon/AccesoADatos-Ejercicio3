@@ -6,7 +6,7 @@ import { Assignment } from '../models';
 })
 export class AssignmentsService {
 
-  public _assignments: Assignment[]=[
+  private _assignments: Assignment[]=[
     {
       idAssignment: 1,
       idCustomer: 1,
@@ -15,7 +15,6 @@ export class AssignmentsService {
       nameCustomer: "Juan",
       surnameCustomer: "Solo",
       createTask: "01/01/2020",
-      doTask: "02/01/2022"
     },
     {
       idAssignment: 2,
@@ -25,7 +24,6 @@ export class AssignmentsService {
       nameCustomer: "John",
       surnameCustomer: "Smith",
       createTask: "02/02/2020",
-      doTask: "02/03/2022"
     }
 
   ];
@@ -56,7 +54,7 @@ getAssignmentsByidCustomer(idCustomer:number):Assignment[]{
   return this._assignments.filter(a=>a.idCustomer == idCustomer);
 }
 
-deleteAssignmentById(idAssignment:number){
+deleteAssignmentByidAssignment(idAssignment:number){
   this._assignments = this._assignments.filter(a=>a.idAssignment != idAssignment); 
 }
 
@@ -74,7 +72,6 @@ updateAssignment(assignment:Assignment){
     _assignment.nameCustomer = assignment.nameCustomer;
     _assignment.surnameCustomer = assignment.surnameCustomer;
     _assignment.createTask = assignment.createTask;
-    _assignment.doTask = assignment.doTask;
   }
   
  }

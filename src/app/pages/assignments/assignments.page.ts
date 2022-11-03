@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ModalController } from '@ionic/angular';
+import { AlertController, ModalController } from '@ionic/angular';
 import { Assignment, AssignmentDetailComponent } from 'src/app/core';
 import { AssignmentsService } from 'src/app/core/services/assignments.service';
 
@@ -13,7 +13,6 @@ export class AssignmentsPage implements OnInit {
 
   assignment:Assignment;
 
-  alert:any;
 
 
 
@@ -22,6 +21,7 @@ export class AssignmentsPage implements OnInit {
     
     private modal:ModalController,
     private assignmentSvc: AssignmentsService,
+    private alert: AlertController,
   ) { }
 
 
@@ -55,13 +55,14 @@ export class AssignmentsPage implements OnInit {
   getAssignments(){
     return this.assignmentSvc.getAssignments();
   }
+
   onEditAssignment(assignment){
     this.presentAssignmentForm(assignment)
   }
 
-  
+  //LA CONSOLA DE FIREFOX DICE QUE EL ERROR ESTÁ AQUÍ. 
   onDeleteAssignment(assignment){
-    this.assignmentSvc.deleteAssignmentById(assignment.idAssignment);
+    this.assignmentSvc.deleteAssignmentByidAssignment(assignment.idAssignment);
 
   }
   onNewAssignment(){
@@ -84,7 +85,7 @@ export class AssignmentsPage implements OnInit {
         text: 'Borrar',
         role: 'confirm',
         handler: () =>{
-          this.assignmentSvc.deleteAssignmentById(this.assignment.idAssignment);
+          this.assignmentSvc.deleteAssignmentByidAssignment(this.assignment.idAssignment);
         }
       }
 
@@ -95,5 +96,6 @@ export class AssignmentsPage implements OnInit {
 
     const { role } = await alert.onDidDismiss();
     
+
   }
 }

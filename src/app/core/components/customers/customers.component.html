@@ -1,0 +1,3 @@
+<ion-list>
+  <app-customer *ngFor="let customer of getCustomers()" [customer] = "customer" (onEdit)="onEditCustomer($event)" (onDelete) ="onDeleteCustomer($event)"></app-customer>
+</ion-list>

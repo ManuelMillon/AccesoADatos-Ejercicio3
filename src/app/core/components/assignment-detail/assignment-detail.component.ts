@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { ModalController } from '@ionic/angular';
 import { Assignment } from '../../models';
 import { CustomersService, TasksService } from '../../services';
@@ -17,12 +17,16 @@ export class AssignmentDetailComponent implements OnInit {
 
   @Input('assignment') set assignment(assignment:Assignment){
     if(assignment){
-      this.form.controls.id.setValue(assignment.idAssignment);
+      this.form.controls.idAssignment.setValue(assignment.idAssignment);
       this.form.controls.idTask.setValue(assignment.idTask);
       this.form.controls.idCustomer.setValue(assignment.idCustomer);
-      this.form.controls.doTask.setValue(assignment.doTask)
       this.form.controls.createTask.setValue(assignment.createTask)
-
+      this.form = this.fb.group({
+        id:[null],
+        taskId:[-1, [Validators.min(1)]],
+        customerId:[-1,[Validators.min(1)]],
+        createTask:['', Validators.required],
+      });
     }
   }
 
@@ -32,7 +36,10 @@ export class AssignmentDetailComponent implements OnInit {
     private assignmentsSvc:AssignmentsService,
     private fb:FormBuilder,
     private modal:ModalController
-  ) { }
+  ) { 
+
+
+  }
 
   ngOnInit() {}
 
@@ -44,6 +51,10 @@ export class AssignmentDetailComponent implements OnInit {
 
   onDismiss(result){
     this.modal.dismiss(null, 'cancel');
+  }
+
+  onChangeCreateTask(createTask){
+    this.form.controls.createTask.setValue(createTask);
   }
 
 

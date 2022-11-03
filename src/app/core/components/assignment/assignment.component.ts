@@ -13,11 +13,14 @@ import { AssignmentsService } from '../../services/assignments.service';
 })
 export class AssignmentComponent implements OnInit {
 
+  _assignment: Assignment;
 
 
   @Output() onEdit = new EventEmitter;
   @Output() onDelete = new EventEmitter;
-  @Input() assignment: Assignment;
+  @Input("assignment")set assignment(n: Assignment) {
+    this._assignment = n;
+  }
   
   constructor(
     private customersSvc:CustomersService,
@@ -56,5 +59,9 @@ export class AssignmentComponent implements OnInit {
 
   onDeleteClick(){
     this.onDelete.emit(this.assignment);
+  }
+
+  get assign() {
+    return this._assignment;
   }
 }

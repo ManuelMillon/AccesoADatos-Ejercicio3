@@ -29,12 +29,36 @@
         </ion-label>
         <ion-input type="text" placeholder="Introduce la tarea" formControlName="nameTask"></ion-input>
       </ion-item>
+
       <ion-item>
         <ion-label position="floating">
           Creación de tarea
         </ion-label>
         <ion-input type="text" placeholder="Fecha de creación de la tarea" formControlName="createTask"></ion-input>
       </ion-item>
+      <ion-button [disabled]="!form.valid" type="submit">
+        MODIFICAR
+      <!-- 
+        NO ME PILLA LA OPCIÓN DE CAMBIAR EL MODO
+         {{mode=="Edit"?"Modificar":"Añadir"}}-->
+      </ion-button>
+    </form>
+  </ion-content>
+      
+
+<!--
+/////////////NO TENGO COJONES DE CONSEGUIR PONER EL PUÑETERO ION-DATETIME///////////////////////////////
+
+<ion-modal [keepContentsMounted]="true">
+        <ng-template>
+          <ion-datetime doneText="Aceptar"
+          cancelText="Cancelar" 
+          showDefaultButtons="true" preferWheel="true" name="createTask id="createTask></ion-datetime>
+        </ng-template>
+      </ion-modal>
+
+
+
       <ion-item>
         <ion-label position="floating">
           Realización de la tarea
@@ -42,7 +66,4 @@
         <ion-input type="text" placeholder="Realizacicón de la terea" formControlName="doTask"></ion-input>
       </ion-item>
 
-  
-      <ion-button [disabled]="!form.valid" type="submit">{{mode=="Edit"?"Modificar":"Añadir"}}</ion-button>
-    </form>
-  </ion-content>
+  -->
