@@ -25,17 +25,17 @@ export class CustomerSelectableComponent implements OnInit, ControlValueAccessor
 
   selectedCustomer:Customer = null;
   propagateChange = (_: any) => {}
-  idDisabled:boolean = false;
+  isDisabled:boolean = false;
 
 
 
 
   constructor(
-    private customerSvc: CustomersService
+    private customersSvc: CustomersService
   ) { }
 
   writeValue(obj: any): void {
-    this.selectedCustomer = this.customerSvc.getCustomerById(obj);
+    this.selectedCustomer = this.customersSvc.getCustomerById(obj);
   }
 
   registerOnChange(fn: any): void {
@@ -45,13 +45,13 @@ export class CustomerSelectableComponent implements OnInit, ControlValueAccessor
   }
 
   setDisabledState?(isDisabled: boolean): void {
-    this.idDisabled = isDisabled;
+    this.isDisabled = isDisabled;
   }
 
   ngOnInit() {}
 
   getCustomer(){
-    return this.customerSvc.getCustomers();
+    return this.customersSvc.getCustomers();
   } 
 
   onCustomerClicked(customer:Customer, accordion:IonAccordionGroup){

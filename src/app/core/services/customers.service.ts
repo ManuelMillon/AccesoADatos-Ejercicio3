@@ -12,7 +12,8 @@ export class CustomersService {
     surnameCustomer: "Solo",
     nationalityCustomer: "España",
     emailCustomer: "aasdf@gmail.com",
-    telephoneCustomer: "9203489029345"
+    telephoneCustomer: "9203489029345",
+    pictureCustomer:"C:\Users\manol\IonicProjects\ejercicio3\src\assets\futbolistas\beckham.jpg"
     },
     {
     idCustomer: 2,
@@ -20,7 +21,8 @@ export class CustomersService {
     surnameCustomer: "Smith",
     nationalityCustomer: "US",
     emailCustomer: "aasdf@gmail.com",
-    telephoneCustomer: "9203489029345"
+    telephoneCustomer: "9203489029345",
+    pictureCustomer:"C:\Users\manol\IonicProjects\ejercicio3\src\assets\futbolistas\cristiano.jpg"
     },
 
     {
@@ -29,7 +31,8 @@ export class CustomersService {
     surnameCustomer: "Schmidt",
     nationalityCustomer: "Alemania",
     emailCustomer: "aasdf@gmail.com",
-    telephoneCustomer: "9203489029345"
+    telephoneCustomer: "9203489029345",
+    pictureCustomer: "C:\Users\manol\IonicProjects\ejercicio3\src\assets\futbolistas\gareth.jpg"
     },
     {
     idCustomer: 4,
@@ -37,8 +40,8 @@ export class CustomersService {
     surnameCustomer: "Abdeselam",
     nationalityCustomer: "Marruecos",
     emailCustomer: "aasdf@gmail.com",
-    telephoneCustomer: "9203489029345"
-
+    telephoneCustomer: "9203489029345",
+    pictureCustomer:"C:\Users\manol\IonicProjects\ejercicio3\src\assets\futbolistas\gareth.jpg"
     },
     {
     idCustomer: 5,
@@ -46,7 +49,8 @@ export class CustomersService {
     surnameCustomer: "Solo",
     nationalityCustomer: "España",
     emailCustomer: "aasdf@gmail.com",
-    telephoneCustomer: "9203489029345"
+    telephoneCustomer: "9203489029345",
+    pictureCustomer:"C:\Users\manol\IonicProjects\ejercicio3\src\assets\futbolistas\lewan.jpg"
     },
     {
     idCustomer: 6,
@@ -54,7 +58,8 @@ export class CustomersService {
     surnameCustomer: "Smith",
     nationalityCustomer: "US",
     emailCustomer: "aasdf@gmail.com",
-    telephoneCustomer: "9203489029345"
+    telephoneCustomer: "9203489029345",
+    pictureCustomer:"C:\Users\manol\IonicProjects\ejercicio3\src\assets\futbolistas\mbappe.jpg"
     },
       
     {
@@ -63,7 +68,8 @@ export class CustomersService {
     surnameCustomer: "Schmidt",
     nationalityCustomer: "Alemania",
     emailCustomer: "aasdf@gmail.com",
-    telephoneCustomer: "9203489029345"
+    telephoneCustomer: "9203489029345",
+    pictureCustomer:"C:\Users\manol\IonicProjects\ejercicio3\src\assets\futbolistas\messi.jpg"
     },
     {
     idCustomer: 8,
@@ -71,7 +77,8 @@ export class CustomersService {
     surnameCustomer: "Abdeselam",
     nationalityCustomer: "Marruecos",
     emailCustomer: "aasdf@gmail.com",
-    telephoneCustomer: "9203489029345"
+    telephoneCustomer: "9203489029345",
+    pictureCustomer:"C:\Users\manol\IonicProjects\ejercicio3\src\assets\futbolistas\neymar.jpg"
     },
     {
     idCustomer: 9,
@@ -79,7 +86,8 @@ export class CustomersService {
     surnameCustomer: "Solo",
     nationalityCustomer: "España",
     emailCustomer: "aasdf@gmail.com",
-    telephoneCustomer: "9203489029345"
+    telephoneCustomer: "9203489029345",
+    pictureCustomer:"C:\Users\manol\IonicProjects\ejercicio3\src\assets\futbolistas\salah.jpg"
     },
     {
     idCustomer: 10,
@@ -96,7 +104,7 @@ export class CustomersService {
       surnameCustomer: "Schmidt",
       nationalityCustomer: "Alemania",
       emailCustomer: "aasdf@gmail.com",
-    telephoneCustomer: "9203489029345"
+      telephoneCustomer: "9203489029345"
     },
     {
     idCustomer: 12,

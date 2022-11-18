@@ -13,15 +13,18 @@ import { AssignmentsService } from '../../services/assignments.service';
 })
 export class AssignmentComponent implements OnInit {
 
-  _assignment: Assignment;
 
 
+//input y outputs. Sólo necesita el input del assignment. 
   @Output() onEdit = new EventEmitter;
   @Output() onDelete = new EventEmitter;
-  @Input("assignment")set assignment(n: Assignment) {
-    this._assignment = n;
-  }
+  @Input() assignment:Assignment;
+  @Input() customer: Customer;
+  @Input() task: Task;
+
   
+
+  //Constructor. Trabaja con los servicios. 
   constructor(
     private customersSvc:CustomersService,
     private tasksSvc:TasksService,
@@ -35,6 +38,11 @@ export class AssignmentComponent implements OnInit {
   ngOnInit() {}
 
 
+
+  //Método para coger tarea
+  
+  /**
+  
   getTask():Task{
       var idTask = this.assignment.idTask;
       if(idTask)
@@ -42,26 +50,61 @@ export class AssignmentComponent implements OnInit {
       return undefined;
     }
 
+ */
+
+
+    //Método para recoger al cliente. 
   getCustomer():Customer{
     var idCustomer = this.assignment.idCustomer; 
     if(idCustomer){
       return this.customersSvc.getCustomerById(idCustomer);
       return undefined;
 
-      //POSIBLE ERROR EN EL RETURN ANTERIOR. DETECTADO POR LA DIFERENCIA DE COLOR. 
     }
   }
 
+  /**
+   *  async presentTaskForm(task:Task){
+   *    const modal = await this.modal.create
+   *      component: TaskDetailComponent,
+   *       componentProps: {
+   *          task:task
+   *        },
+   *      cssClass: "modal-full-right-side"
+   * });
+   *     modal.present();
+    modal.onDidDismiss().then(result=>{
+      if(result && result.data){
+        switch(result.data.mode){
+          case 'New':
+            this.tasksSvc.addTask(result.data.task);
+            break;
+          case 'Edit':
+            this.tasksSvc.updateTask(result.data.task);
+            break;
+          default:
+        }
+      }
+    });
+   * 
+   *  
+   */
 
+    getAssignments() {
+      return this.assignmentsSvc.getAssignments();
+    }
+
+//Método para editar la asignación. 
   onEditClick(){
     this.onEdit.emit(this.assignment);
   }
 
+  //Método para borrar la asignación. 
   onDeleteClick(){
     this.onDelete.emit(this.assignment);
   }
 
-  get assign() {
-    return this._assignment;
-  }
+
+
+
 }

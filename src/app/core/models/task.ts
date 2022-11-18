@@ -1,5 +1,6 @@
 export interface Task {
     idTask?: number;
     nameTask: string;
-    imgTask: string;
+    imgTask?: string;
+    durationInSecs?: number;
 }

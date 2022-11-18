@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import * as moment from 'moment';
 import { Assignment } from '../models';
 
 @Injectable({
@@ -11,19 +12,15 @@ export class AssignmentsService {
       idAssignment: 1,
       idCustomer: 1,
       idTask: 1, 
-      nameTask: "cocinar",
-      nameCustomer: "Juan",
-      surnameCustomer: "Solo",
-      createTask: "01/01/2020",
+      createdAt:moment().toISOString(),
+      dateTime:moment().add(1, 'days').toLocaleString(),
     },
     {
       idAssignment: 2,
       idCustomer: 2,
       idTask: 2, 
-      nameTask: "limpiar",
-      nameCustomer: "John",
-      surnameCustomer: "Smith",
-      createTask: "02/02/2020",
+      createdAt:moment().toISOString(),
+      dateTime:moment().add(1, 'days').toLocaleString(),
     }
 
   ];
@@ -34,45 +31,53 @@ export class AssignmentsService {
 
 
 
-
+//Conseguir asignación
 getAssignments(){
     
   return this._assignments;
 }
 
+
+//Conseguir asignación por id de asignación
 getAssignmentById(idAssignment:number){
   return this._assignments.find(a=>a.idAssignment==idAssignment);
 }
 
+
+//Conseguir asignación por id de tarea
 getAssignmentsByidTask(idTask:number):Assignment[]{
   return this._assignments.filter(a=>a.idTask
      == idTask
     );
 }
-
+//Conseguir asignación por id del cliente
 getAssignmentsByidCustomer(idCustomer:number):Assignment[]{
   return this._assignments.filter(a=>a.idCustomer == idCustomer);
 }
 
+//Borrar asignación por id de asignación
 deleteAssignmentByidAssignment(idAssignment:number){
   this._assignments = this._assignments.filter(a=>a.idAssignment != idAssignment); 
 }
 
-addAssignment(assingment:Assignment){
-  assingment.idAssignment = this.idAssignment++;
-  this._assignments.push(assingment);
+//Añadir nueva asignación
+addAssignment(assignment:Assignment){
+  assignment.idAssignment = this.idAssignment++;
+  this._assignments.push(assignment);
 }
 
-
+//Actualizar asignación.
 updateAssignment(assignment:Assignment){
   var _assignment = this._assignments.find(a=>a.idAssignment==assignment.idAssignment);
   if(_assignment){
     _assignment.idTask = assignment.idTask;
     _assignment.idCustomer = assignment.idCustomer;
-    _assignment.nameCustomer = assignment.nameCustomer;
-    _assignment.surnameCustomer = assignment.surnameCustomer;
-    _assignment.createTask = assignment.createTask;
+    _assignment.createdAt = assignment.createdAt;
+    _assignment.dateTime = assignment.dateTime;
+    
   }
   
  }
 }
+
+

@@ -13,10 +13,6 @@ export class AssignmentsPage implements OnInit {
 
   assignment:Assignment;
 
-
-
-
-
   constructor(
     
     private modal:ModalController,
@@ -60,17 +56,16 @@ export class AssignmentsPage implements OnInit {
     this.presentAssignmentForm(assignment)
   }
 
-  //LA CONSOLA DE FIREFOX DICE QUE EL ERROR ESTÁ AQUÍ. 
+  
   onDeleteAssignment(assignment){
     this.assignmentSvc.deleteAssignmentByidAssignment(assignment.idAssignment);
-
   }
+
   onNewAssignment(){
     this.presentAssignmentForm(null);
   }
 
 
-//POR QUÉ NO PILLA EL ALERT?
   async onDeleteAlert(assignment){
     const alert = await this.alert.create({
       header: '¿Quiere borrar a este cliente?',
@@ -88,14 +83,11 @@ export class AssignmentsPage implements OnInit {
           this.assignmentSvc.deleteAssignmentByidAssignment(this.assignment.idAssignment);
         }
       }
-
     ]
     })
 
     await alert.present();
 
     const { role } = await alert.onDidDismiss();
-    
-
   }
 }

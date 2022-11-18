@@ -8,11 +8,21 @@ import { AssignmentsPageRoutingModule } from './assignments-routing.module';
 
 import { AssignmentsPage } from './assignments.page';
 import { CoreModule } from 'src/app/core/core.module';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { createTranslateLoader } from 'src/app/core/utils/translate';
+import { HttpClient } from '@angular/common/http';
 
 @NgModule({
   imports: [
     CoreModule,
-    AssignmentsPageRoutingModule
+    AssignmentsPageRoutingModule,
+    TranslateModule.forChild({
+      loader: {
+      provide: TranslateLoader,
+      useFactory: (createTranslateLoader),
+      deps: [HttpClient]
+      }
+      }),
   ],
   declarations: [AssignmentsPage]
 })

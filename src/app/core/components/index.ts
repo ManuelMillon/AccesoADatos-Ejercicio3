@@ -6,7 +6,9 @@ export * from './assignment/assignment.component';
 export * from './assignment-detail/assignment-detail.component';
 export * from './task/task.component';
 export * from './task-detail/task-detail.component';
-export * from './tasks/tasks.component'
+export * from './tasks/tasks.component';
+export * from './date-time-selectable/date-time-selectable.component';
+export * from './house/house.component';
 
 
 

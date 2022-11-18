@@ -7,13 +7,23 @@ import { IonicModule } from '@ionic/angular';
 import { HousesPageRoutingModule } from './houses-routing.module';
 
 import { HousesPage } from './houses.page';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { createTranslateLoader } from 'src/app/core/utils/translate';
+import { HttpClient } from '@angular/common/http';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    HousesPageRoutingModule
+    HousesPageRoutingModule,
+    TranslateModule.forChild({
+      loader: {
+      provide: TranslateLoader,
+      useFactory: (createTranslateLoader),
+      deps: [HttpClient]
+      }
+      }),
   ],
   declarations: [HousesPage]
 })

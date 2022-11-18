@@ -1,0 +1,61 @@
+{
+    "home":{
+        "title":"Gestión de tareas",
+        "language": "español",
+        "apartment": "Apartamento",
+        "customer": "Invitados",
+        "booking": "Reservas"
+    },
+
+    "customers":{
+        "nameCustomer": "Nombre",
+        "surnameCustomer": "Apellido",
+        "nationalityCustomer": "Nacionalidad"
+    },
+
+    "house-detail": {
+        "nameApartment": "Apartamento",
+        "apartments": "Datos del Apartamento",
+        "typeYourCity": "Introduce la localidad",
+        "typeYourApartment": "Introduce el nombre de tu apartamento",
+        "dailyPrice": "Introduce el precio diario",
+        "edit": "Editar",
+        "modify": "Modificar",
+        "add": "Añadir",
+        "apartment": "Apartamento",
+        "price": "Precio",
+        "location": "Localidad",
+        "personDetails": "Datos de la persona"
+    },
+
+    "customer-detail":{
+        "Edit": "Editar",
+        "modify": "Modificar",
+        "add": "Añadir",
+        "typeYourTelephone": "Introduce tu teléfono",
+        "telephoneNumber": "Número de teléfono",
+        "typeYourEmail": "Introduce tu correo electrónico",
+        "emailAdress": "Correo electrónico",
+        "nationality": "Nacionalidad",
+        "typeYournationality": "Introduce tu nacionalidad",
+        "surname": "Apellidos",
+        "typeYourSurname": "Introduce tus apellidos",
+        "name": "nombre",
+        "typeYourName": "Introduce tu nombre",
+        "close": "Cerrar"
+    },
+
+    
+    "booking":{
+        "price": "precio"
+    },
+
+
+    "tasks":{
+        "task": "tarea"
+    },
+
+    "assignments":{
+        "customer": "cliente"
+    }
+}

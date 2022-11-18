@@ -1,8 +1,10 @@
 <ion-header>
     <ion-toolbar>
-      <ion-title>Datos de la persona</ion-title>
+      <ion-title>ASIGNACIÓN</ion-title>
       <ion-buttons slot="end">
+        
         <ion-button (click)="onDismiss(null)">Cerrar</ion-button>
+
       </ion-buttons>
     </ion-toolbar>
   </ion-header>
@@ -10,60 +12,15 @@
   
     
     <form [formGroup]="form" (ngSubmit)="onSubmit()" (keyup.enter)="onSubmit()">
-      <ion-item>
-        <ion-label position="floating">
-          Nombre
-        </ion-label>
-        <ion-input type="text" placeholder="Introduce el nombre" formControlName="nameCustomer"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label position="floating">
-          Apellidos
-        </ion-label>
-        <ion-input type="text" placeholder="Introduce tus apellidos" formControlName="surnameCustomer"></ion-input>
-      </ion-item>
+      <app-customer-selectable formControlName="idCustomer"></app-customer-selectable>
+      <ion-datetime-button datetime="datetime"></ion-datetime-button>
   
-      <ion-item>
-        <ion-label position="floating">
-          Tarea
-        </ion-label>
-        <ion-input type="text" placeholder="Introduce la tarea" formControlName="nameTask"></ion-input>
-      </ion-item>
-
-      <ion-item>
-        <ion-label position="floating">
-          Creación de tarea
-        </ion-label>
-        <ion-input type="text" placeholder="Fecha de creación de la tarea" formControlName="createTask"></ion-input>
-      </ion-item>
-      <ion-button [disabled]="!form.valid" type="submit">
-        MODIFICAR
-      <!-- 
-        NO ME PILLA LA OPCIÓN DE CAMBIAR EL MODO
-         {{mode=="Edit"?"Modificar":"Añadir"}}-->
-      </ion-button>
+      <ion-modal [keepContentsMounted]="true">
+        <ng-template>
+          <ion-datetime id="dateTime"></ion-datetime>
+        </ng-template>
+      </ion-modal>
+      <ion-button [disabled]="!form.valid" type="submit">{{mode=="Edit"?"Modificar":"Añadir"}}</ion-button>
     </form>
   </ion-content>
       
-
-<!--
-/////////////NO TENGO COJONES DE CONSEGUIR PONER EL PUÑETERO ION-DATETIME///////////////////////////////
-
-<ion-modal [keepContentsMounted]="true">
-        <ng-template>
-          <ion-datetime doneText="Aceptar"
-          cancelText="Cancelar" 
-          showDefaultButtons="true" preferWheel="true" name="createTask id="createTask></ion-datetime>
-        </ng-template>
-      </ion-modal>
-
-
-
-      <ion-item>
-        <ion-label position="floating">
-          Realización de la tarea
-        </ion-label>
-        <ion-input type="text" placeholder="Realizacicón de la terea" formControlName="doTask"></ion-input>
-      </ion-item>
-
-  -->

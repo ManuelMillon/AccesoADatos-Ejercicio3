@@ -1,0 +1,48 @@
+{
+    "home":{
+        "title":"Task Management",
+        "language": "English",
+        "apartment": "Apartaments",
+        "guest": "Guests",
+        "booking": "Bookings"
+    },
+
+
+    "house": {
+        "nameApartment": "Apartament",
+        "apartments": "Details of the apartment",
+        "typeYourCity": "Type the location",
+        "typeYourApartment": "Type the name of your apartment",
+        "dailyPrice": "Type your daily price",
+        "edit": "Edit",
+        "modify": "Modify",
+        "add": "Add",
+        "apartment": "Apartamento",
+        "price": "Price",
+        "location": "Location"
+    },
+
+    "customer-detail":{
+        "Edit": "Edit",
+        "modify": "Modify",
+        "add": "Add",
+        "typeYourTelephone": "Type Your Telephone",
+        "telephoneNumber": "Telephone Number",
+        "typeYourEmail": "Type Your Email",
+        "emailAdress": "EmailA dress",
+        "nationality": "Nationality",
+        "typeYournationality": "Type Your Nationality",
+        "surname": "Surname",
+        "typeYourSurname": "Type Your Surname",
+        "name": "Name",
+        "typeYourName": "Type Your Name",
+        "close": "Close"
+    },
+
+    "task-detail":{
+        "silhouette": "Silhouette of a person"
+    }
+
+
+
+}

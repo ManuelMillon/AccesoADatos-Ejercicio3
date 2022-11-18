@@ -1,12 +1,8 @@
 export interface Assignment {
-    idAssignment?: number,
+    idAssignment: number,
     idCustomer?: number,
-    idTask?: number;
-    nameTask?: string,
-    nameCustomer?: string,
-    surnameCustomer?: string,
-    createTask?: string,
-    doTask?: string,
-    pictureCustomer?: string
+    idTask?: number,
+    createdAt:string; // ISO 8601 YYYY-MM-DDTHH:mm:ss+HH:MM
+    dateTime:string; // ISO 8601 YYYY-MM-DDTHH:mm:ss+HH:MM
     //PENDIENTE DE REVISAR 
 }

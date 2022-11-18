@@ -2,5 +2,6 @@ export interface House {
     idHouse: number,
     nameHouse: string,
     priceHouse: number,
-    pictureHouse?: string
+    pictureHouse?: string,
+    cityHouse: string;
 }

@@ -1,8 +1,8 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Datos de la persona</ion-title>
+    <ion-title>{{ "personDetails" | translate }} </ion-title>
     <ion-buttons slot="end">
-      <ion-button (click)="onDismiss(null)">Cerrar</ion-button>
+      <ion-button (click)="onDismiss(null)">{{ "close" | translate}} </ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
@@ -12,36 +12,36 @@
   <form [formGroup]="form" (ngSubmit)="onSubmit()" (keyup.enter)="onSubmit()">
     <ion-item>
       <ion-label position="floating">
-        Nombre
+        {{"name" | translate}}
       </ion-label>
-      <ion-input type="text" placeholder="Introduce tu nombre" formControlName="nameCustomer"></ion-input>
+      <ion-input type="text" placeholder="{{'typeYourName' | translate}}"  formControlName="nameCustomer"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label position="floating">
-        Apellidos
+        {{"surname" | translate}}
       </ion-label>
-      <ion-input type="text" placeholder="Introduce tus apellidos" formControlName="surnameCustomer"></ion-input>
+      <ion-input type="text" placeholder="{{'typeYourSurname' | translate}}" formControlName="surnameCustomer"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label position="floating">
-        Nacionalidad
+        {{"nationality" | translate}}
       </ion-label>
-      <ion-input type="text" placeholder="Introduce tu nacionalidad" formControlName="nationalityCustomer"></ion-input>
+      <ion-input type="text" placeholder="{{ 'typeYournationality' | translate }}" formControlName="nationalityCustomer"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label position="floating">
-        Correo Electrónico
+        {{ "emailAdress" | translate}}
       </ion-label>
-      <ion-input type="text" placeholder="Introduce tu correo electrónico" formControlName="emailCustomer"></ion-input>
+      <ion-input type="text" placeholder="{{ 'typeYourEmail' | translate}}" formControlName="emailCustomer"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label position="floating">
-        Teléfono de contacto
+        {{ "telephoneNumber" | translate }}
       </ion-label>
-      <ion-input type="text" placeholder="Introduce tu teléfono" formControlName="telephoneCustomer"></ion-input>
+      <ion-input type="text" placeholder="{{'typeYourTelephone' | translate }}" formControlName="telephoneCustomer"></ion-input>
     </ion-item>
 
-    <ion-button [disabled]="!form.valid" type="submit">{{mode=="Edit"?"Modificar":"Añadir"}}</ion-button>
+    <ion-button [disabled]="!form.valid" type="submit">{{mode=="Edit"?"modify":"añadir" | translate}}</ion-button>
   </form>
 </ion-content>

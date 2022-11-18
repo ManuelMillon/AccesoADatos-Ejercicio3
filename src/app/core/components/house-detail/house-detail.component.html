@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{ "apartments" | translate }}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="onDismiss(null)">{{ "close" | translate }}</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+
+  
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" (keyup.enter)="onSubmit()">
+    <ion-item>
+      <ion-label position="floating">
+        {{"apartament" | translate}}
+      </ion-label>
+      <ion-input type="text" placeholder="{{'typeYourApartment' | translate }}" formControlName="nameHouse"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">
+        {{"price" | translate}}
+      </ion-label>
+      <ion-input type="text" placeholder="{{ 'dailyPrice' | translate }}" formControlName="priceHouse"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">
+        {{"location" | translate}}
+      </ion-label>
+      <ion-input type="text" placeholder="{{'typeYourCity' | translate}}" formControlName="cityHouse"></ion-input>
+    </ion-item>
+
+    <!--AVERIGUAR CÓMO TRADUCIR-->
+    <ion-button [disabled]="!form.valid" type="submit">{{mode=="Edit"?"house.modify":"house.add" | translate}}</ion-button>
+  </form>
+</ion-content>
