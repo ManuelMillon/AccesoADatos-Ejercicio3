@@ -1,10 +1,13 @@
 {
     "home":{
-        "title":"Task Management",
+        "title":"Management of tasks",
         "language": "English",
-        "apartment": "Apartaments",
-        "guest": "Guests",
-        "booking": "Bookings"
+        "apartments": "Apartaments",
+        "customer": "Customers",
+        "booking": "Bookings",
+        "tasks": "Tasks",
+        "assignments": "Assignments",
+        "login" : "Login"
     },
 
 

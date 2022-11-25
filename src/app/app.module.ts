@@ -8,12 +8,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { createTranslateLoader } from './core/utils/translate';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { CoreModule } from './core/core.module';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, 
-    IonicModule.forRoot(), 
-    AppRoutingModule, 
+  imports: [
+    BrowserModule,
+    CoreModule, 
+    HttpClientModule,
     TranslateModule.forRoot({
       loader: {
       provide: TranslateLoader,
@@ -21,6 +23,8 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
       deps: [HttpClient]
       }
       }),
+    AppRoutingModule, 
+   
     ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],

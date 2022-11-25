@@ -2,10 +2,15 @@
     "home":{
         "title":"Gestión de tareas",
         "language": "español",
-        "apartment": "Apartamento",
+        "apartments": "Apartamentos",
         "customer": "Invitados",
-        "booking": "Reservas"
+        "booking": "Reservas",
+        "tasks": "Tareas",
+        "assignments": "Asignaciones",
+        "login" : "Registro"
     },
+
+
 
     "customers":{
         "nameCustomer": "Nombre",

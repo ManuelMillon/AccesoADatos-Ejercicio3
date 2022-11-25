@@ -5,13 +5,17 @@ import { FormsModule } from '@angular/forms';
 import { HomePage } from './home.page';
 
 import { HomePageRoutingModule } from './home-routing.module';
+import { CoreModule } from '../core/core.module';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { createTranslateLoader } from '../core/utils/translate';
 
 
 @NgModule({
   imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
+    
+    CoreModule,
+    
     HomePageRoutingModule
   ],
   declarations: [HomePage]

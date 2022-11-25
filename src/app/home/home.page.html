@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      SCA
+      {{'home.title' | translate}}
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,17 +9,30 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">SUNNY COAST APARTMENTS</ion-title>
+      <ion-title size="large">{{'home.title' | translate}}</ion-title>
     </ion-toolbar>
   </ion-header>
 
   <ion-buttons>
 
-    <ion-button slot="start" [routerLink]="['/customers']">CLIENTES</ion-button>    
-    <ion-button slot="primary" [routerLink]="['/tasks']">TASKS</ion-button>
-    <ion-button slot="end" [routerLink]="['/assignments']">ASSIGNMENTS</ion-button>
-    <ion-button slot="secondary" [routerLink]="['/houses']">APARTAMENTOS</ion-button>
-    <ion-button slot="end" [routerLink]="['/bookings']">ASSIGNMENTS</ion-button>
+    <ion-button color="tertiary" slot="start" [routerLink]="['/customers']">{{'home.customer' | translate}}</ion-button>    
+    <ion-button color="primary" slot="primary" [routerLink]="['/tasks']">{{'home.tasks' | translate}}</ion-button>
+    <ion-button color="secondary" slot="end" [routerLink]="['/assignments']">{{'home.assignments' | translate}}</ion-button>
+    <ion-button color="success" slot="start" [routerLink]="['/houses']">{{'home.apartments' | translate}}</ion-button>
+    <ion-button color="dark" slot="secondary" [routerLink]="['/bookings']">{{'home.booking' | translate}}</ion-button>
+    <ion-button color="medium" slot="secondary" (click)="onChangeLanguage()">{{'home.language' | translate}}</ion-button>
+    <ion-button color="danger" slot="end" expand="block" (click)="presentToast('top')">{{'home.login' | translate}}</ion-button>
 
   </ion-buttons>
+
+
+
+
 </ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <div class="ion-text-center">
+      <ion-title >Aplicación desarrollada por Manuel Millón y el equipo de EhtoEhMuFácil™ para ShortMeCapital™ y la asignatura de Acceso a Datos</ion-title>
+    </div>
+  </ion-toolbar>
+</ion-footer>

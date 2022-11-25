@@ -32,6 +32,7 @@ import { HouseDetailComponent } from './components/house-detail/house-detail.com
     CommonModule,
     FormsModule,
     IonicModule.forRoot(),
+    HttpClientModule,
     TranslateModule.forChild({
       loader: {
       provide: TranslateLoader,
@@ -48,7 +49,8 @@ import { HouseDetailComponent } from './components/house-detail/house-detail.com
     TaskComponent, TaskDetailComponent, TasksComponent, 
     AssignmentComponent, AssignmentDetailComponent, 
     HouseComponent, HouseDetailComponent,
-    HttpClientModule
+    HttpClientModule,
+    TranslateModule
 ]
   }
 )

@@ -13,7 +13,7 @@ export class CustomersService {
     nationalityCustomer: "España",
     emailCustomer: "aasdf@gmail.com",
     telephoneCustomer: "9203489029345",
-    pictureCustomer:"C:\Users\manol\IonicProjects\ejercicio3\src\assets\futbolistas\beckham.jpg"
+    pictureCustomer:"/assets/futbolistas/beckham.jpg"
     },
     {
     idCustomer: 2,
@@ -22,7 +22,7 @@ export class CustomersService {
     nationalityCustomer: "US",
     emailCustomer: "aasdf@gmail.com",
     telephoneCustomer: "9203489029345",
-    pictureCustomer:"C:\Users\manol\IonicProjects\ejercicio3\src\assets\futbolistas\cristiano.jpg"
+    pictureCustomer:"/assets/futbolistas/cristiano.jpg"
     },
 
     {
@@ -32,7 +32,7 @@ export class CustomersService {
     nationalityCustomer: "Alemania",
     emailCustomer: "aasdf@gmail.com",
     telephoneCustomer: "9203489029345",
-    pictureCustomer: "C:\Users\manol\IonicProjects\ejercicio3\src\assets\futbolistas\gareth.jpg"
+    pictureCustomer: "/assets/futbolistas/gareth.jpg"
     },
     {
     idCustomer: 4,
@@ -41,7 +41,7 @@ export class CustomersService {
     nationalityCustomer: "Marruecos",
     emailCustomer: "aasdf@gmail.com",
     telephoneCustomer: "9203489029345",
-    pictureCustomer:"C:\Users\manol\IonicProjects\ejercicio3\src\assets\futbolistas\gareth.jpg"
+    pictureCustomer:"/assets/futbolistas/gareth.jpg"
     },
     {
     idCustomer: 5,
@@ -50,7 +50,7 @@ export class CustomersService {
     nationalityCustomer: "España",
     emailCustomer: "aasdf@gmail.com",
     telephoneCustomer: "9203489029345",
-    pictureCustomer:"C:\Users\manol\IonicProjects\ejercicio3\src\assets\futbolistas\lewan.jpg"
+    pictureCustomer:"/assets/futbolistas/lewan.jpg"
     },
     {
     idCustomer: 6,
@@ -59,7 +59,7 @@ export class CustomersService {
     nationalityCustomer: "US",
     emailCustomer: "aasdf@gmail.com",
     telephoneCustomer: "9203489029345",
-    pictureCustomer:"C:\Users\manol\IonicProjects\ejercicio3\src\assets\futbolistas\mbappe.jpg"
+    pictureCustomer:"/assets/futbolistas/mbappe.jpg"
     },
       
     {
@@ -69,7 +69,7 @@ export class CustomersService {
     nationalityCustomer: "Alemania",
     emailCustomer: "aasdf@gmail.com",
     telephoneCustomer: "9203489029345",
-    pictureCustomer:"C:\Users\manol\IonicProjects\ejercicio3\src\assets\futbolistas\messi.jpg"
+    pictureCustomer:"/assets/futbolistas/messi.jpg"
     },
     {
     idCustomer: 8,
@@ -78,7 +78,7 @@ export class CustomersService {
     nationalityCustomer: "Marruecos",
     emailCustomer: "aasdf@gmail.com",
     telephoneCustomer: "9203489029345",
-    pictureCustomer:"C:\Users\manol\IonicProjects\ejercicio3\src\assets\futbolistas\neymar.jpg"
+    pictureCustomer:"/assets/futbolistas/neymar.jpg"
     },
     {
     idCustomer: 9,
@@ -87,7 +87,7 @@ export class CustomersService {
     nationalityCustomer: "España",
     emailCustomer: "aasdf@gmail.com",
     telephoneCustomer: "9203489029345",
-    pictureCustomer:"C:\Users\manol\IonicProjects\ejercicio3\src\assets\futbolistas\salah.jpg"
+    pictureCustomer:"/assets/futbolistas/salah.jpg"
     },
     {
     idCustomer: 10,
@@ -118,6 +118,7 @@ export class CustomersService {
 
 
   idCustomer: number = this._customers.length+1;
+  
   constructor() { 
   }
 
@@ -146,6 +147,7 @@ export class CustomersService {
       _customer.nationalityCustomer = customer.nationalityCustomer;
       _customer.emailCustomer = customer.emailCustomer;
       _customer.telephoneCustomer = customer.telephoneCustomer;
+      _customer.pictureCustomer = customer.pictureCustomer;
     }
   }
 

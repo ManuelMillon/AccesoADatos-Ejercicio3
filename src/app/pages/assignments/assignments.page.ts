@@ -49,6 +49,7 @@ export class AssignmentsPage implements OnInit {
 
   
   getAssignments(){
+    console.log(this.assignmentSvc.getAssignments()); 
     return this.assignmentSvc.getAssignments();
   }
 
